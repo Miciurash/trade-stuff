@@ -7,8 +7,8 @@ function load() {
 function save(list) { localStorage.setItem(STORAGE_KEY, JSON.stringify(list)); }
 
 function render(filter = '') {
-  const board = document.getElementById('board);
-  const empty = document.getElementById('empty);
+  const board = document.getElementById('board');
+  const empty = document.getElementById('empty');
   const q = filter.toLowerCase().trim();
   const list = load().filter(t =>
     !q || t.have.toLowerCase().includes(q) || t.want.toLowerCase().includes(q) || (t.location || '').toLowerCase().includes(q)
@@ -16,7 +16,7 @@ function render(filter = '') {
   board.innerHTML = '';
   empty.style.display = list.length ? 'none' : 'block';
   list.forEach((t, i) => {
-    const card = document.createElement('div);
+    const card = document.createElement('div');
     card.className = 'card';
     card.innerHTML = `
       <div class="have">${esc(t.have)}</div>
@@ -39,7 +39,7 @@ function render(filter = '') {
 }
 
 function esc(s) {
-  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;);
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 }
 
 document.getElementById('tradeForm').addEventListener('submit', e => {
