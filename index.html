@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trade Stuff</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Trade Stuff</h1>
+  <p class="tagline">List what you have. List what you want. Find your match.</p>
+</header>
+
+<main>
+  <section class="post-form">
+    <h2>Post a trade</h2>
+    <form id="tradeForm">
+      <div class="row">
+        <label>I have<input type="text" id="have" placeholder="e.g. vintage bike helmet" required></label>
+        <label>I want<input type="text" id="want" placeholder="e.g. camping stove" required></label>
+      </div>
+      <div class="row">
+        <label>Your name or handle<input type="text" id="name" placeholder="optional"></label>
+        <label>Location<input type="text" id="location" placeholder="city or area"></label>
+      </div>
+      <button type="submit">Post it</button>
+    </form>
+  </section>
+
+  <section class="listings">
+    <div class="listings-header">
+      <h2>Open trades</h2>
+      <input type="search" id="search" placeholder="Filter by item or place">
+    </div>
+    <div id="board" class="board"></div>
+    <p id="empty" class="empty">No trades yet. Be the first.</p>
+  </section>
+</main>
+
+<footer>Trade Stuff — local listings only, nothing is sold here.</footer>
+<script src="app.js"></script>
+</body>
+</html>
